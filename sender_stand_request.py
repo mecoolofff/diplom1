@@ -7,12 +7,7 @@ def create_order(body):
                              json=body,
                              headers=data.headers)
     return response
-
-response = create_order(data.order)
-
-if response.status_code == 201:
-    order_track = response.json()
-    track = order_track.get('track')
-    print("Заказ успешно создан. Трек номер:", track)
-else:
-    print("Не удалось создать заказ. Код ошибки:", response.status_code)
+def get_order_by_track(track):
+    url = configuration.URL_SERVICE + configuration.TRACK_PATH + "?t=" + str(track)
+    response = requests.get(url)
+    return response
