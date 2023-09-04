@@ -1,6 +1,4 @@
-# Микулов Никита, 7-я когорта — Финальный проект. Инженер по тестированию плюс
-import configuration
-import requests
+# Микулов Никита Финальный проект
 import sender_stand_request
 import data
 def test_get_order_by_track():
